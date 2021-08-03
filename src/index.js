@@ -5,6 +5,7 @@ import path from 'path';
 
 const app = express();
 const __dirname = path.resolve();
+const port = process.env.PORT || 3000;
 app.set('view engine', 'pug');
 app.set("views", path.join(__dirname, "views"));
 app.use(cors());
@@ -15,6 +16,6 @@ app.get('/api', (req, res) => {
     .then((json) => res.render('api', { items: json }));
 });
 
-app.listen(process.env.PORT || "3000", () =>
+app.listen(port, () =>
   console.log(`App served on port 3000!`),
 );
