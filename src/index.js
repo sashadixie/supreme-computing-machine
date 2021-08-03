@@ -15,6 +15,6 @@ app.get('/api', (req, res) => {
     .then((json) => res.render('api', { items: json }));
 });
 
-app.listen("3000", () =>
+app.listen(process.env.PORT || "3000", () =>
   console.log(`App served on port 3000!`),
 );
