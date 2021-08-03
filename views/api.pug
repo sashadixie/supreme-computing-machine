@@ -1,0 +1,5 @@
+ul
+  each item in items
+    li.post&attributes({'data-postid': item.id, 'data-userid': item.userId})
+      div.header= item.title
+      div.content= item.body
